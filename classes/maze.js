@@ -8,6 +8,29 @@ module.exports = class Maze {
     this.initializeNodes();
   }
 
+  findNeighbors(node) {
+    const neighbors = [];
+    // above
+    if (node.y - 1 >= 0) {
+      neighbors.push(this.nodes[`${node.x}, ${node.y - 1}`]);
+    }
+
+    // right
+    if (node.x < this.width) {
+      neighbors.push(this.nodes[`${node.x + 1}, ${node.y}`]);
+    }
+    // below
+    if (node.y + 1 < this.length) {
+      neighbors.push(this.nodes[`${node.x}, ${node.y + 1}`]);
+    }
+
+    // left
+    if (node.x - 1 >= 0) {
+      neighbors.push(this.nodes[`${node.x - 1}, ${node.y}`]);
+    }
+    return neighbors;
+  }
+
   // this is the grid
   initializeNodes() {
     for (let y = 0; y < this.length; y++) {
