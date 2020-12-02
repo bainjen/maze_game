@@ -23,6 +23,9 @@
 
 1. Choose a starting node
 2. Push starting node as the first element in the stack
+
+While there nodes in the stack/While stack not empty:
+
 3. Find the neighbors of the node
 
 If there are neighbors that have not been visited:
